@@ -1,0 +1,9 @@
+obj
+lib
+bin
+
+.cache
+
+vg*
+
+compile_commands.json
