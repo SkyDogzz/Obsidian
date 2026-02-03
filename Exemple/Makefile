@@ -2,6 +2,7 @@ NAME	:= exemple
 
 CC		:= g++
 CFLAGS	:= -Wall -Wextra -Werror -std=c++23 -MMD -MP
+LDLIBS	:= $(shell pkg-config --libs glfw3) -lGL
 
 SRCDIR	:= src
 OBJDIR	:= obj
@@ -18,7 +19,7 @@ all: $(BINDIR)/$(NAME)
 
 $(BINDIR)/$(NAME): $(OBJS) corelib
 	@mkdir -p $(BINDIR)
-	$(CC) $(CFLAGS) $(OBJS) $(CORELIB) -o $@
+	$(CC) $(CFLAGS) $(OBJS) $(CORELIB) $(LDLIBS) -o $@
 	@echo "🖤✨ Linked with obsidian.a"
 
 corelib:

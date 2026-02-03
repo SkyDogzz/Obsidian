@@ -9,7 +9,9 @@ SRCDIR	:= src
 OBJDIR	:= obj
 BINDIR	:= lib
 
-SRCS	:= Vector.cpp
+SRCS	:= Vector.cpp \
+				 Window.cpp
+
 OBJS	:= $(SRCS:%.cpp=$(OBJDIR)/%.o)
 
 all: $(BINDIR)/$(NAME)
